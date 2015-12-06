@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/5fpro/lita-aws-cloudwatch.svg?branch=master)](https://travis-ci.org/5fpro/lita-aws-cloudwatch)
 
-Receive AWS CloudWatch alerm from AWS SNS (Simple Notification Service), and messaging to room.
+Receive AWS CloudWatch alarm from AWS SNS (Simple Notification Service), and messaging to room.
 
 # Features
 
