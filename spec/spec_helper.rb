@@ -1,3 +1,4 @@
+require 'json'
 require "lita-aws-cloudwatch"
 require "lita/rspec"
 
