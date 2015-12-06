@@ -14,7 +14,6 @@ Receive AWS CloudWatch alerm from AWS SNS (Simple Notification Service), and mes
 ## Installation
 
 1. Add lita-aws-cloudwatch to your Lita instance's Gemfile:
-
 ``` ruby
 gem "lita-aws-cloudwatch"
 ```
@@ -22,15 +21,14 @@ gem "lita-aws-cloudwatch"
 2. See <a href="#configuration">Configuration</a>.
 
 3. Restart lita.
-
 (goto AWS web console...)
 
 4. Create `Topic` in AWS SNS.
 
 5. Create SNS `Subscription` from `Topic`
-- choose Protocol to `HTTP`.
-- set Endpoint to `http://123.123.123.123:8888/aws-cloudwatch/receive`
-- You will receive confirmation link from lita notify (click the link to finish confirmation).
+  - choose Protocol to `HTTP`.
+  - set Endpoint to `http://123.123.123.123:8888/aws-cloudwatch/receive`
+  - You will receive confirmation link from lita notify (click the link to finish confirmation).
 
 4. Set CloudWatch notification to topic.
 
@@ -39,7 +37,6 @@ gem "lita-aws-cloudwatch"
 ## Configuration
 
 1. You must enable lita `http routing` and `redis` in `lita_config.rb`
-
 ```
   config.redis['host'] = "127.0.0.1"
   config.redis['port'] = 6379
@@ -48,7 +45,6 @@ gem "lita-aws-cloudwatch"
 ```
 
 2. Default room name while account is not set yet.
-
 ```
   config.handlers.aws_cloudwatch.default_room = "general"
 ```
