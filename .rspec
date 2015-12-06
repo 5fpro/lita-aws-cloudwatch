@@ -1,5 +1,2 @@
---color
---require spec_helper
-
+--colour
 --profile
---format doc
