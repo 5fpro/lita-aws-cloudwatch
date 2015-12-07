@@ -63,9 +63,9 @@ aws account list
 aws account set 123123 5Fpro co. ltd.
 ```
 
-- `aws account set [account id] [room name]` : set notify room for account. If you use Slack, it need to invite lita robot to room.
+- `aws account room [account id] [room name]` : set notify room for account. If you use Slack, it need to invite lita robot to room.
 ```
-aws account set 123123 #server-state.
+aws account room 123123 #server-state.
 ```
 
 ## License
