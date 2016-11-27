@@ -14,7 +14,7 @@ module Lita
       route(/^aws account room ([0-9]+) ([^\s]+)$/, :set_account_room, command: true, help: { "aws account room [account id] [room_name]" => "Set room for AWS account" })
       def set_account_room(response)
         account_id = response.matches[0][0]
-        room_name = response.matches[0][1].gsub("#", "")
+        room_name = response.matches[0][1]
         redis.hset(redis_key_for_room, account_id, room_name)
         response.reply("AWS account: #{account_id} has set room to: #{room_name} , please invite robot to the room.")
       end
