@@ -16,12 +16,12 @@ module Lita
         account_id = response.matches[0][0]
         room_name = response.matches[0][1].gsub("#", "")
         redis.hset(redis_key_for_room, account_id, room_name)
-        response.reply("AWS account: #{account_id} has set room to: ##{room_name} , please invite robot to the room.")
+        response.reply("AWS account: #{account_id} has set room to: #{room_name} , please invite robot to the room.")
       end
 
       route(/^aws account list/, :list_accounts, command: true, help: { "aws account list" => "List all AWS accounts" })
       def list_accounts(response)
-        message = accounts.keys.map{ |key| "#{key}: #{accounts[key]} ( ##{fetch_room(key)} )" }.join("\n")
+        message = accounts.keys.map{ |key| "#{key}: #{accounts[key]} ( #{fetch_room(key)} )" }.join("\n")
         response.reply(message)
       end
 
