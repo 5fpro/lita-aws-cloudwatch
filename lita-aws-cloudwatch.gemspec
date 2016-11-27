@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name          = "lita-aws-cloudwatch"
-  spec.version       = "0.1.2"
+  spec.version       = "0.1.3"
   spec.authors       = ["marsz"]
   spec.email         = ["marsz330@gmail.com"]
   spec.description   = "Receive AWS CloudWatch alarm from AWS SNS (Simple Notification Service), and messaging to room."
