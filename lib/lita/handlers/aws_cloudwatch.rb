@@ -97,18 +97,18 @@ module Lita
 
       def send_message_to_room(message, room_name = nil)
         room_name ||= config.default_room
-        target = Source.new(room: find_room_id_by_name(room_name))
+        target = find_target_by_name(room_name)
         robot.send_messages(target, message)
       end
 
-      def find_room_id_by_name(room_name)
+      def find_target_by_name(room_name)
         case robot.config.robot.adapter.to_s.to_sym
         when :slack
-          if room = ::Lita::Room.find_by_name(room_name)
-            return room.id
-          else
-            ::Lita::Room.find_by_name("general").id
-          end
+          room = ::Lita::Room.find_by_name(room_name)
+          room_id = room ? room.id : ::Lita::Room.find_by_name("general").id
+          Source.new(room: room_id)
+        when :flowdock
+          FlowdockSource.new(room: room_name)
         else
           room_name
         end
